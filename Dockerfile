@@ -4,9 +4,9 @@ ENV NODE_ENV production
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-COPY server/package.json .
+COPY ./package.json .
 RUN npm install
-COPY server/ .
+COPY ./ .
 
 RUN npm install && npm install nodemon --save-dev
 

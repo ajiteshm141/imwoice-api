@@ -27,7 +27,7 @@ dotenv.config()
 
 app.use((express.json({ limit: "30mb", extended: true})))
 app.use((express.urlencoded({ limit: "30mb", extended: true})))
-app.use((cors()))
+app.use((cors( { origin: '*'})))
 
 app.use('/invoices', invoiceRoutes)
 app.use('/clients', clientRoutes)
@@ -58,7 +58,7 @@ app.post('/send-pdf', (req, res) => {
        
           // send mail with defined transport object
         transporter.sendMail({
-            from: ` Accountill <hello@accountill.com>`, // sender address
+            from: `accounts@mushroomworldbpl.com`, // sender address
             to: `${email}`, // list of receivers
             replyTo: `${company.email}`,
             subject: `Invoice from ${company.businessName ? company.businessName : company.name}`, // Subject line

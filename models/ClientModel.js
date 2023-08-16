@@ -10,7 +10,8 @@ const ClientSchema = mongoose.Schema({
     createdAt: {
         type: Date,
         default: new Date()
-    }
+    },
+    GSTIN:String
 })
 
 const ClientModel = mongoose.model('ClientModel', ClientSchema)
